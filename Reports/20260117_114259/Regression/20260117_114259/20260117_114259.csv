@@ -1,0 +1,42 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+Regression,Chrome 143.0.0.0,,,2026-01-17 11:43:01,2026-01-17 11:43:24,23.317s,PASSED
+,,,,,,,
+Test Cases/Main Test Cases/TC01_Dynamic_Device_Table,Chrome 143.0.0.0,,,2026-01-17 11:43:01,2026-01-17 11:43:08,7.623s,PASSED
+Start listener action : beforeTestCase,Chrome 143.0.0.0,,,2026-01-17 11:43:01,2026-01-17 11:43:07,6.509s,PASSED
+"devicesMenu = TestObject().addProperty(""xpath"", EQUALS, ""//a[contains(@href,'devices')]"")",Chrome 143.0.0.0,,,2026-01-17 11:43:07,2026-01-17 11:43:07,0.008s,PASSED
+"waitForElementClickable(devicesMenu, 30)",Chrome 143.0.0.0,,,2026-01-17 11:43:07,2026-01-17 11:43:07,0.131s,PASSED
+click(devicesMenu),Chrome 143.0.0.0,,,2026-01-17 11:43:07,2026-01-17 11:43:07,0.092s,PASSED
+waitForPageLoad(30),Chrome 143.0.0.0,,,2026-01-17 11:43:07,2026-01-17 11:43:08,0.052s,PASSED
+"loaded = executeJavaScript(""return document.body.innerText.toLowerCase().includes('device');"", null)",Chrome 143.0.0.0,,,2026-01-17 11:43:08,2026-01-17 11:43:08,0.029s,PASSED
+"assert loaded == true : ""Devices page not loaded""",Chrome 143.0.0.0,,,2026-01-17 11:43:08,2026-01-17 11:43:08,0.000s,PASSED
+closeBrowser(),Chrome 143.0.0.0,,,2026-01-17 11:43:08,2026-01-17 11:43:08,0.679s,PASSED
+Start listener action : takeScreenshot,Chrome 143.0.0.0,,,2026-01-17 11:43:08,2026-01-17 11:43:08,0.058s,ERROR
+,,,,,,,
+Test Cases/Main Test Cases/TC02_Dashboard_Visual_Check,Chrome 143.0.0.0,,,2026-01-17 11:43:08,2026-01-17 11:43:20,11.349s,PASSED
+Start listener action : beforeTestCase,Chrome 143.0.0.0,,,2026-01-17 11:43:08,2026-01-17 11:43:13,4.253s,PASSED
+waitForPageLoad(20),Chrome 143.0.0.0,,,2026-01-17 11:43:13,2026-01-17 11:43:13,0.019s,PASSED
+"navigateToUrl(""https://demo.librenms.org/overview"")",Chrome 143.0.0.0,,,2026-01-17 11:43:13,2026-01-17 11:43:14,1.107s,PASSED
+delay(5),Chrome 143.0.0.0,,,2026-01-17 11:43:14,2026-01-17 11:43:19,5.030s,PASSED
+js = getWebDriver(),Chrome 143.0.0.0,,,2026-01-17 11:43:19,2026-01-17 11:43:19,0.001s,PASSED
+"assert js.executeScript(""return document.readyState"") == ""complete""",Chrome 143.0.0.0,,,2026-01-17 11:43:19,2026-01-17 11:43:19,0.018s,PASSED
+"assert js.executeScript(""return window.onerror == null"") == true",Chrome 143.0.0.0,,,2026-01-17 11:43:19,2026-01-17 11:43:19,0.017s,PASSED
+"assert js.executeScript(""return (window.jQuery && jQuery.active === 0)"") == true",Chrome 143.0.0.0,,,2026-01-17 11:43:19,2026-01-17 11:43:19,0.016s,PASSED
+pageText = toString().trim(),Chrome 143.0.0.0,,,2026-01-17 11:43:19,2026-01-17 11:43:19,0.017s,PASSED
+"assert pageText.length() > 50 : ""❌ Dashboard rendered empty content""",Chrome 143.0.0.0,,,2026-01-17 11:43:19,2026-01-17 11:43:19,0.001s,PASSED
+takeScreenshot(),Chrome 143.0.0.0,,,2026-01-17 11:43:19,2026-01-17 11:43:19,0.099s,PASSED
+closeBrowser(),Chrome 143.0.0.0,,,2026-01-17 11:43:19,2026-01-17 11:43:20,0.692s,PASSED
+Start listener action : takeScreenshot,Chrome 143.0.0.0,,,2026-01-17 11:43:20,2026-01-17 11:43:20,0.007s,ERROR
+,,,,,,,
+Test Cases/Main Test Cases/TC03_Hybrid_Data_Injection,Chrome 143.0.0.0,,,2026-01-17 11:43:20,2026-01-17 11:43:24,4.184s,PASSED
+Start listener action : beforeTestCase,Chrome 143.0.0.0,,,2026-01-17 11:43:20,2026-01-17 11:43:23,3.819s,PASSED
+MAX_RETRY = 2,Chrome 143.0.0.0,,,2026-01-17 11:43:24,2026-01-17 11:43:24,0.000s,PASSED
+TIMEOUT = 60000,Chrome 143.0.0.0,,,2026-01-17 11:43:24,2026-01-17 11:43:24,0.000s,PASSED
+backendAvailable = false,Chrome 143.0.0.0,,,2026-01-17 11:43:24,2026-01-17 11:43:24,0.000s,PASSED
+response = null,Chrome 143.0.0.0,,,2026-01-17 11:43:24,2026-01-17 11:43:24,0.000s,PASSED
+"request = findTestObject(""API/Inject_Device"")",Chrome 143.0.0.0,,,2026-01-17 11:43:24,2026-01-17 11:43:24,0.032s,PASSED
+if (request == null),Chrome 143.0.0.0,,,2026-01-17 11:43:24,2026-01-17 11:43:24,0.000s,PASSED
+"logInfo(""⚙ Loaded API TestObject: API/Inject_Device"")",Chrome 143.0.0.0,,,2026-01-17 11:43:24,2026-01-17 11:43:24,0.004s,PASSED
+retry = 0,Chrome 143.0.0.0,,,2026-01-17 11:43:24,2026-01-17 11:43:24,0.000s,PASSED
+while (retry <= MAX_RETRY && !(backendAvailable)),Chrome 143.0.0.0,,,2026-01-17 11:43:24,2026-01-17 11:43:24,0.049s,PASSED
+if (!(backendAvailable)),Chrome 143.0.0.0,,,2026-01-17 11:43:24,2026-01-17 11:43:24,0.000s,PASSED
+Start listener action : takeScreenshot,Chrome 143.0.0.0,,,2026-01-17 11:43:24,2026-01-17 11:43:24,0.188s,PASSED
